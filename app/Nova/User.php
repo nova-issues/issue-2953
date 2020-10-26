@@ -41,6 +41,11 @@ class User extends Resource
      */
     public function fields(Request $request)
     {
+        info(json_encode([
+            'model' => $this->model(),
+            'request' => get_class($request),
+        ]));
+
         return [
             ID::make()->sortable(),
 
